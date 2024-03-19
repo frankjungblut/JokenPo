@@ -27,48 +27,33 @@ suaJogada.forEach(jogada => {
 
 function resultado(you, alexa) {
     let showResult = document.querySelector(".result")
-    let uScore = document.querySelector(".your-score")
-    let alexaScore = document.querySelector(".machine-score")
+    let uScore = document.querySelector(".your-score span")
+    let alexaScore = document.querySelector(".machine-score span")
 
     if (you === alexa) {
-        console.log("empate")
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Empate!"
-    } else if ((you === "rock") && (alexa === "scissors")) {
-        console.log("Você ganhou")
+    } else if ((you === "rock") && (alexa === "scissors")) {     
         uPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
-        showResult.textContent = "Você ganhou"
+        showResult.textContent = "Você ganhou" 
     } else if ((you === "scissors") && (alexa === "rock")) {
-        console.log("Alexa ganhou")
         alexaPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Alexa ganhou"
     } else if ((you === "scissors") && (alexa === "paper")) {
-        console.log("Você ganhou")
         uPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Você ganhou"
     } else if ((you === "paper") && (alexa === "scissors")) {
-        console.log("Alexa ganhou")
         alexaPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Alexa ganhou"
     } else if ((you === "paper") && (alexa === "rock")) {
-        console.log("Você ganhou")
         uPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Você ganhou"
     } else if ((you === "rock") && (alexa === "paper")) {
-        console.log("Alexa ganhou")
         alexaPoint++
-        console.log(`Você: ${uPoint} X ${alexaPoint} `)
         showResult.textContent = "Alexa ganhou"
     }
 
     uScore.textContent = uPoint 
     alexaScore.textContent = alexaPoint
-
 }
 
 function alexa() {
